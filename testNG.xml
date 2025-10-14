@@ -1,0 +1,10 @@
+<suite name = "OrangehrmDemo">
+    <test name = "BasicTest">
+        <classes>
+
+            <class name = "Test.FirstTest"/>
+            <class name = "Test.LoginTest"/>
+
+        </classes>
+    </test>
+</suite>
