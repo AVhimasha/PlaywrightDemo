@@ -4,6 +4,7 @@
 
             <class name = "Test.FirstTest"/>
             <class name = "Test.LoginTest"/>
+            <class name="Test.AddUser"/>
 
         </classes>
     </test>

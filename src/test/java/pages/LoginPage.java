@@ -4,31 +4,33 @@ import com.microsoft.playwright.Page;
 
 public class LoginPage {
 
-    private Page page;
-    private final String usernameTextbox = "input[name ='username']";
-    private final String passwordTextbox = "input[name ='password']";
-    private final String loginButton = "button[type = 'submit']";
+    private final Page page;
 
+    // Constructor
     public LoginPage(Page page){
         this.page = page;
     }
 
-    public void addUsername (String username){
+    // Methods to interact
+    public void addUsername(String username){
+        String usernameTextbox = "input[name='username']";
         page.fill(usernameTextbox, username);
     }
 
-    public void addPassword (String password){
+    public void addPassword(String password){
+        String passwordTextbox = "input[name='password']";
         page.fill(passwordTextbox, password);
     }
 
-    public void clickLogin (){
+    public void clickLogin(){
+        String loginButton = "button[type='submit']";
         page.click(loginButton);
     }
 
-    public void Login (String username, String password){
-        page.fill(usernameTextbox, username);
-        page.fill(passwordTextbox, password);
-        page.click(loginButton);
+    // Login helper (instance method)
+    public void login(String username, String password){
+        addUsername(username);
+        addPassword(password);
+        clickLogin();
     }
-
 }

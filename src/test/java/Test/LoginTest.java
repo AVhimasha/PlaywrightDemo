@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
         page.navigate("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         test.info("Enter Valid Credentials");
-        loginPage.Login("Admin", "admin123");
+        loginPage.login("Admin", "admin123"); // Corrected to call 'login'
 
         test.info("Navigate to home page");
         homePage.dashboard();
@@ -30,24 +30,5 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test
-    public void testLogin1() {
-
-        page.setDefaultTimeout(60000);
-
-        LoginPage loginPage = new LoginPage(page);
-        HomePage homePage = new HomePage(page);
-
-        test.info("Navigate to login page");
-        page.navigate("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-        test.info("Enter Invalid Credentials");
-        loginPage.Login("Admin", "admin123");
-
-        /*test.info("Navigate to home page");
-        homePage.dashboard();*/
-
-        test.info("All Test completed");
-    }
 
 }
